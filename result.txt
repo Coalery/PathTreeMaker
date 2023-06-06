@@ -1,0 +1,294 @@
+path-tree-maker
+├─ .git
+│  ├─ config
+│  ├─ description
+│  ├─ HEAD
+│  ├─ hooks
+│  │  ├─ applypatch-msg.sample
+│  │  ├─ commit-msg.sample
+│  │  ├─ fsmonitor-watchman.sample
+│  │  ├─ post-update.sample
+│  │  ├─ pre-applypatch.sample
+│  │  ├─ pre-commit.sample
+│  │  ├─ pre-merge-commit.sample
+│  │  ├─ pre-push.sample
+│  │  ├─ pre-rebase.sample
+│  │  ├─ pre-receive.sample
+│  │  ├─ prepare-commit-msg.sample
+│  │  ├─ push-to-checkout.sample
+│  │  └─ update.sample
+│  ├─ info
+│  │  └─ exclude
+│  ├─ objects
+│  │  ├─ info
+│  │  └─ pack
+│  └─ refs
+│     ├─ heads
+│     └─ tags
+├─ .gitignore
+├─ .prettierrc
+├─ main.ts
+├─ node_modules
+│  ├─ .bin
+│  │  ├─ tsc
+│  │  ├─ tsc.cmd
+│  │  ├─ tsc.ps1
+│  │  ├─ tsserver
+│  │  ├─ tsserver.cmd
+│  │  └─ tsserver.ps1
+│  ├─ .package-lock.json
+│  ├─ @types
+│  │  └─ node
+│  │     ├─ assert
+│  │     │  └─ strict.d.ts
+│  │     ├─ assert.d.ts
+│  │     ├─ async_hooks.d.ts
+│  │     ├─ buffer.d.ts
+│  │     ├─ child_process.d.ts
+│  │     ├─ cluster.d.ts
+│  │     ├─ console.d.ts
+│  │     ├─ constants.d.ts
+│  │     ├─ crypto.d.ts
+│  │     ├─ dgram.d.ts
+│  │     ├─ diagnostics_channel.d.ts
+│  │     ├─ dns
+│  │     │  └─ promises.d.ts
+│  │     ├─ dns.d.ts
+│  │     ├─ dom-events.d.ts
+│  │     ├─ domain.d.ts
+│  │     ├─ events.d.ts
+│  │     ├─ fs
+│  │     │  └─ promises.d.ts
+│  │     ├─ fs.d.ts
+│  │     ├─ globals.d.ts
+│  │     ├─ globals.global.d.ts
+│  │     ├─ http.d.ts
+│  │     ├─ http2.d.ts
+│  │     ├─ https.d.ts
+│  │     ├─ index.d.ts
+│  │     ├─ inspector.d.ts
+│  │     ├─ LICENSE
+│  │     ├─ module.d.ts
+│  │     ├─ net.d.ts
+│  │     ├─ os.d.ts
+│  │     ├─ package.json
+│  │     ├─ path.d.ts
+│  │     ├─ perf_hooks.d.ts
+│  │     ├─ process.d.ts
+│  │     ├─ punycode.d.ts
+│  │     ├─ querystring.d.ts
+│  │     ├─ readline
+│  │     │  └─ promises.d.ts
+│  │     ├─ readline.d.ts
+│  │     ├─ README.md
+│  │     ├─ repl.d.ts
+│  │     ├─ stream
+│  │     │  ├─ consumers.d.ts
+│  │     │  ├─ promises.d.ts
+│  │     │  └─ web.d.ts
+│  │     ├─ stream.d.ts
+│  │     ├─ string_decoder.d.ts
+│  │     ├─ test.d.ts
+│  │     ├─ timers
+│  │     │  └─ promises.d.ts
+│  │     ├─ timers.d.ts
+│  │     ├─ tls.d.ts
+│  │     ├─ trace_events.d.ts
+│  │     ├─ ts4.8
+│  │     │  ├─ assert
+│  │     │  │  └─ strict.d.ts
+│  │     │  ├─ assert.d.ts
+│  │     │  ├─ async_hooks.d.ts
+│  │     │  ├─ buffer.d.ts
+│  │     │  ├─ child_process.d.ts
+│  │     │  ├─ cluster.d.ts
+│  │     │  ├─ console.d.ts
+│  │     │  ├─ constants.d.ts
+│  │     │  ├─ crypto.d.ts
+│  │     │  ├─ dgram.d.ts
+│  │     │  ├─ diagnostics_channel.d.ts
+│  │     │  ├─ dns
+│  │     │  │  └─ promises.d.ts
+│  │     │  ├─ dns.d.ts
+│  │     │  ├─ dom-events.d.ts
+│  │     │  ├─ domain.d.ts
+│  │     │  ├─ events.d.ts
+│  │     │  ├─ fs
+│  │     │  │  └─ promises.d.ts
+│  │     │  ├─ fs.d.ts
+│  │     │  ├─ globals.d.ts
+│  │     │  ├─ globals.global.d.ts
+│  │     │  ├─ http.d.ts
+│  │     │  ├─ http2.d.ts
+│  │     │  ├─ https.d.ts
+│  │     │  ├─ index.d.ts
+│  │     │  ├─ inspector.d.ts
+│  │     │  ├─ module.d.ts
+│  │     │  ├─ net.d.ts
+│  │     │  ├─ os.d.ts
+│  │     │  ├─ path.d.ts
+│  │     │  ├─ perf_hooks.d.ts
+│  │     │  ├─ process.d.ts
+│  │     │  ├─ punycode.d.ts
+│  │     │  ├─ querystring.d.ts
+│  │     │  ├─ readline
+│  │     │  │  └─ promises.d.ts
+│  │     │  ├─ readline.d.ts
+│  │     │  ├─ repl.d.ts
+│  │     │  ├─ stream
+│  │     │  │  ├─ consumers.d.ts
+│  │     │  │  ├─ promises.d.ts
+│  │     │  │  └─ web.d.ts
+│  │     │  ├─ stream.d.ts
+│  │     │  ├─ string_decoder.d.ts
+│  │     │  ├─ test.d.ts
+│  │     │  ├─ timers
+│  │     │  │  └─ promises.d.ts
+│  │     │  ├─ timers.d.ts
+│  │     │  ├─ tls.d.ts
+│  │     │  ├─ trace_events.d.ts
+│  │     │  ├─ tty.d.ts
+│  │     │  ├─ url.d.ts
+│  │     │  ├─ util.d.ts
+│  │     │  ├─ v8.d.ts
+│  │     │  ├─ vm.d.ts
+│  │     │  ├─ wasi.d.ts
+│  │     │  ├─ worker_threads.d.ts
+│  │     │  └─ zlib.d.ts
+│  │     ├─ tty.d.ts
+│  │     ├─ url.d.ts
+│  │     ├─ util.d.ts
+│  │     ├─ v8.d.ts
+│  │     ├─ vm.d.ts
+│  │     ├─ wasi.d.ts
+│  │     ├─ worker_threads.d.ts
+│  │     └─ zlib.d.ts
+│  └─ typescript
+│     ├─ bin
+│     │  ├─ tsc
+│     │  └─ tsserver
+│     ├─ lib
+│     │  ├─ cancellationToken.js
+│     │  ├─ cs
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ de
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ es
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ fr
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ it
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ ja
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ ko
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ lib.d.ts
+│     │  ├─ lib.decorators.d.ts
+│     │  ├─ lib.decorators.legacy.d.ts
+│     │  ├─ lib.dom.d.ts
+│     │  ├─ lib.dom.iterable.d.ts
+│     │  ├─ lib.es2015.collection.d.ts
+│     │  ├─ lib.es2015.core.d.ts
+│     │  ├─ lib.es2015.d.ts
+│     │  ├─ lib.es2015.generator.d.ts
+│     │  ├─ lib.es2015.iterable.d.ts
+│     │  ├─ lib.es2015.promise.d.ts
+│     │  ├─ lib.es2015.proxy.d.ts
+│     │  ├─ lib.es2015.reflect.d.ts
+│     │  ├─ lib.es2015.symbol.d.ts
+│     │  ├─ lib.es2015.symbol.wellknown.d.ts
+│     │  ├─ lib.es2016.array.include.d.ts
+│     │  ├─ lib.es2016.d.ts
+│     │  ├─ lib.es2016.full.d.ts
+│     │  ├─ lib.es2017.d.ts
+│     │  ├─ lib.es2017.full.d.ts
+│     │  ├─ lib.es2017.intl.d.ts
+│     │  ├─ lib.es2017.object.d.ts
+│     │  ├─ lib.es2017.sharedmemory.d.ts
+│     │  ├─ lib.es2017.string.d.ts
+│     │  ├─ lib.es2017.typedarrays.d.ts
+│     │  ├─ lib.es2018.asyncgenerator.d.ts
+│     │  ├─ lib.es2018.asynciterable.d.ts
+│     │  ├─ lib.es2018.d.ts
+│     │  ├─ lib.es2018.full.d.ts
+│     │  ├─ lib.es2018.intl.d.ts
+│     │  ├─ lib.es2018.promise.d.ts
+│     │  ├─ lib.es2018.regexp.d.ts
+│     │  ├─ lib.es2019.array.d.ts
+│     │  ├─ lib.es2019.d.ts
+│     │  ├─ lib.es2019.full.d.ts
+│     │  ├─ lib.es2019.intl.d.ts
+│     │  ├─ lib.es2019.object.d.ts
+│     │  ├─ lib.es2019.string.d.ts
+│     │  ├─ lib.es2019.symbol.d.ts
+│     │  ├─ lib.es2020.bigint.d.ts
+│     │  ├─ lib.es2020.d.ts
+│     │  ├─ lib.es2020.date.d.ts
+│     │  ├─ lib.es2020.full.d.ts
+│     │  ├─ lib.es2020.intl.d.ts
+│     │  ├─ lib.es2020.number.d.ts
+│     │  ├─ lib.es2020.promise.d.ts
+│     │  ├─ lib.es2020.sharedmemory.d.ts
+│     │  ├─ lib.es2020.string.d.ts
+│     │  ├─ lib.es2020.symbol.wellknown.d.ts
+│     │  ├─ lib.es2021.d.ts
+│     │  ├─ lib.es2021.full.d.ts
+│     │  ├─ lib.es2021.intl.d.ts
+│     │  ├─ lib.es2021.promise.d.ts
+│     │  ├─ lib.es2021.string.d.ts
+│     │  ├─ lib.es2021.weakref.d.ts
+│     │  ├─ lib.es2022.array.d.ts
+│     │  ├─ lib.es2022.d.ts
+│     │  ├─ lib.es2022.error.d.ts
+│     │  ├─ lib.es2022.full.d.ts
+│     │  ├─ lib.es2022.intl.d.ts
+│     │  ├─ lib.es2022.object.d.ts
+│     │  ├─ lib.es2022.regexp.d.ts
+│     │  ├─ lib.es2022.sharedmemory.d.ts
+│     │  ├─ lib.es2022.string.d.ts
+│     │  ├─ lib.es2023.array.d.ts
+│     │  ├─ lib.es2023.d.ts
+│     │  ├─ lib.es2023.full.d.ts
+│     │  ├─ lib.es5.d.ts
+│     │  ├─ lib.es6.d.ts
+│     │  ├─ lib.esnext.d.ts
+│     │  ├─ lib.esnext.full.d.ts
+│     │  ├─ lib.esnext.intl.d.ts
+│     │  ├─ lib.scripthost.d.ts
+│     │  ├─ lib.webworker.d.ts
+│     │  ├─ lib.webworker.importscripts.d.ts
+│     │  ├─ lib.webworker.iterable.d.ts
+│     │  ├─ pl
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ pt-br
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ ru
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ tr
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  ├─ tsc.js
+│     │  ├─ tsserver.js
+│     │  ├─ tsserverlibrary.d.ts
+│     │  ├─ tsserverlibrary.js
+│     │  ├─ typescript.d.ts
+│     │  ├─ typescript.js
+│     │  ├─ typesMap.json
+│     │  ├─ typingsInstaller.js
+│     │  ├─ watchGuard.js
+│     │  ├─ zh-cn
+│     │  │  └─ diagnosticMessages.generated.json
+│     │  └─ zh-tw
+│     │     └─ diagnosticMessages.generated.json
+│     ├─ LICENSE.txt
+│     ├─ package.json
+│     ├─ README.md
+│     ├─ SECURITY.md
+│     └─ ThirdPartyNoticeText.txt
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ result.txt
+├─ src
+│  └─ path-tree.interface.ts
+└─ tsconfig.json
